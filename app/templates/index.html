@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape", role="button">Scrape New Data</a> </p>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+          <h4>Latest Mars News</h4>
+          <p>{{marsdata.news_title}}</p>
+          <small>{{marsdata.news_paragraph}}</small>    
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-8">
+          <h3>Featured Mars Image</h3>
+          <figure class="figure">
+            <img src="{{marsdata.feature_image_url}}" class="figure-img img-fluid" style='width:100%;' alt="Responsive image">
+          </figure>
+      </div>
+      <div class="col-md-4">
+           <div class="card">
+              <div class="card-body">
+                  <h5 class="card-title">Current Weather on Mars</h5>
+                      <p class="card-text">{{marsdata.mars_weather}}.</p>
+              </div>
+          </div>
+          <div w3-include-html={{mars_fact}}></div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-body">
+                      <h5 class="card-title">{{marsdata.hemisphere_image_urls[0].title}}</h5>
+                      <img src="{{marsdata.hemisphere_image_urls[0].img_url}}" class="figure-img img-fluid" style='width:100%;' alt="Responsive image">
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                   <h5 class="card-title">{{marsdata.hemisphere_image_urls[1].title}}</h5>
+                   <img src="{{marsdata.hemisphere_image_urls[1].img_url}}" class="figure-img img-fluid" style='width:100%;' alt="Responsive image">
+                </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-6">
+              <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">{{marsdata.hemisphere_image_urls[2].title}}</h5>
+                    <img src="{{marsdata.hemisphere_image_urls[2].img_url}}" class="figure-img img-fluid" style='width:100%;' alt="Responsive image">
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">{{marsdata.hemisphere_image_urls[3].title}}</h5>
+                  <img src="{{marsdata.hemisphere_image_urls[3].img_url}}" class="figure-img img-fluid" style='width:100%;' alt="Responsive image">
+                </div>
+              </div>
+          </div>
+
+      </div>
+      
+  </div>
+ 
+
+  </div>
+</body>
+
+</html>
