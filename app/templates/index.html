@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
 </head>
 
 <body>
@@ -20,8 +21,8 @@
     <div class="row">
       <div class="col-md-12">
           <h4>Latest Mars News</h4>
-          <p>{{marsdata.news_title}}</p>
-          <small>{{marsdata.news_paragraph}}</small>    
+          <h5>{{marsdata.news_title}}</h5>
+          <p>{{marsdata.news_paragraph}}</p>    
       </div>
     </div>
 
@@ -38,8 +39,9 @@
                   <h5 class="card-title">Current Weather on Mars</h5>
                       <p class="card-text">{{marsdata.mars_weather}}.</p>
               </div>
-          </div>
-          <div w3-include-html={{mars_fact}}></div>
+           </div>
+           <h5>Mars Facts</h5>
+           {{marsdata.mars_fact|safe}}
       </div>
 
       <div class="row">

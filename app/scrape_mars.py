@@ -22,20 +22,8 @@ def scrape_all():
         "hemisphere_image_urls" : hemisphere_image_urls(browser)
     } 
 
-    print(marsdata)
     return marsdata
-    # scraping the data
-    # news_title, news_paragraph = mars_news(browser)
-    """data = {
-         "news_title" : news_title,
-        # "news_paragraph" : news_paragraph,
-        # "feature_image" : feature_image(browser),
-        # "mars_weather" : mars_weather(browser),
-        # "mars_fact" : mars_fact(),
-        # "hemisphere_image_urls" : hemisphere_image_urls(browser)
-    }
-
-    return data"""
+    
 
 # function to find mars news title and paragraph
 def mars_news(browser):
@@ -100,9 +88,11 @@ def mars_fact():
     mars_tables = pd.read_html(url)
     mars_facts = mars_tables[1]
     mars_facts.columns = ['description', 'value']
+    mars_facts = mars_facts.set_index('description')
     mars_facts_html = mars_facts.to_html()
     return mars_facts_html
 
+# getting image titles and links for mars hemispheres 
 def hemisphere_image_urls(browser):
     hemisphere_image_urls = []
     # set the browser
@@ -117,7 +107,7 @@ def hemisphere_image_urls(browser):
         j = i.find("a", class_="product-item")
         url_rel.append(j['href'])
     
-    # looping throughthe url and get the title and full image url for each image
+    # looping throughthe url and getting the title and full image url for each image
     for i in url_rel:
         url = f"https://astrogeology.usgs.gov{i}"
         browser.visit(url)
