@@ -16,6 +16,10 @@ Scraping Mars data from world wide web and store the data into MongoDB
     * scrape_to: scraping data and storing data in MongoDB
     * templates folder: for index.html
       * index.html: webpage showing the scraping results
+  * screen_shot folder: screen shot from the website showing the scraping data
 
 * webpages screen shot
 ![](screen_shot/screen_shot-1.png)
+![](screen_shot/screen_shot-2.png)
+![](screen_shot/screen_shot-3.png)
+
